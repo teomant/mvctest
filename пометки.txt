@@ -1,0 +1,25 @@
+Пример: https://habr.com/post/226663/
+
+1. MVC
+
+1) Проект Maven без наследований
+2) Add framework support -> Spring MVC ->переместил web в main, переименовал в webapp
+3) Добавил контроллер для первой страницы (LoginController)
+4) Добавил страницу
+5) ДОБАВИЛ В АРТЕФАКТ БИБЛИОТЕКИ!!!!
+
+2. Hibernate
+
+1) По примеру из ufonetwork
+2) Entity, repository, services
+3) Сервер:
+    3.1) <GlobalNamingResources> в server.xml добавлены данные из context.xml в проекте
+    3.2) <ResourceLink name="jdbc/opencodetest" global="jdbc/opencodetest" type="javax.sql.DataSource"/>
+    в conf/context.xml внутри <Context> .... </Context>
+    3.3) Драйвер базы данных в lib
+
+Пометки:
+1) Проверяй, что помечено @NotNull
+2) Ленивая инициализация: Перезаполняй поля, которые лениво инициализируются. Если они не инициализированы
+- не обращайся к ним!
+3) Проверяй, ЧТО ЗА ХРЕНЬ В СПИСКЕ БИБЛИОТЕК, ДАЖЕ ЕСЛИ УБРАЛ ВСЁ ЛИШНЕЕ ИЗ pom.xml
