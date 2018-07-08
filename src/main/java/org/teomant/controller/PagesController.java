@@ -1,7 +1,11 @@
 package org.teomant.controller;
 
 
+import jdk.nashorn.internal.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,10 +28,9 @@ import org.teomant.service.UserService;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -226,5 +229,14 @@ public class PagesController {
         model.addAttribute("finishedGames",finishedGames);
         model.addAttribute("attempts",attempts);
         return "statisticPage";
+    }
+
+    @GetMapping( value = "/test", produces = "application/json" )
+    public @ResponseBody
+    String getAllMessagesOfGroup( HttpServletRequest request) {
+        System.out.println(request.getParameter("number"));
+        System.out.println("test");
+
+        return JSONParser.quote("success");
     }
 }

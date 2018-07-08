@@ -13,6 +13,26 @@
 <head>
     <title>Login</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+    function MyFunction() {
+        alert('test');
+        var errorHandler = function () {
+            alert('Can`t receive messages')
+        };
+        $.ajax({
+            url: "${pageContext.request.contextPath}/test",
+            type: 'GET',
+            timeout: 1000*20,
+            contentType: "application/json",
+            data : {"number" : "10"},
+            success: function(response) {
+                alert('success');
+            },
+             error: errorHandler
+        });
+    }
+</script>
 <body>
 <form:form method="post" action="/login" modelAttribute="loginForm">
     <spring:bind path="username">
@@ -33,5 +53,7 @@
 <br/>
 <br/>
 <a href="/registration">Registration</a>
+<br/>
+<button type="button"  onclick="javascript:MyFunction()">test</button>
 </body>
 </html>

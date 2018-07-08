@@ -11,7 +11,7 @@
 2. Hibernate
 
 1) По примеру из ufonetwork и http://www.baeldung.com/spring-persistence-jpa-jndi-datasource.
-Альтернатива: http://www.baeldung.com/the-persistence-layer-with-spring-and-jpa
+1.1) Альтернатива: http://www.baeldung.com/the-persistence-layer-with-spring-and-jpa
 2) Entity, repository, services
 3) Сервер:
     3.1) <GlobalNamingResources> в server.xml добавлены данные из context.xml в проекте
