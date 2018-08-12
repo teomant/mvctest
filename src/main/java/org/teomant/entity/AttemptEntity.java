@@ -1,5 +1,8 @@
 package org.teomant.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
@@ -9,7 +12,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "game")
 @Entity
 @Table(name = "Attempts", schema = "public", catalog = "opencodetest")
 public class AttemptEntity {
@@ -19,7 +22,7 @@ public class AttemptEntity {
     @Column(name = "id", updatable = false, insertable = false)
     private Long id;
 
-
+    @JsonIgnore
     @ManyToOne( optional = false )
     @JoinColumn( name = "game" )
     private GameEntity game;

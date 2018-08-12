@@ -78,6 +78,7 @@ public class PagesController {
                                       Long userId) {
         if( userId == null ) return "redirect:/";
         UserEntity userEntity = userService.getUserById(userId).get();
+        System.out.println(userEntity);
         model.addAttribute("user",userEntity);
         return "gamePage";
 
@@ -239,4 +240,10 @@ public class PagesController {
 
         return JSONParser.quote("success");
     }
+
+    @GetMapping(value = "/testapi")
+    public String testApi(Model model) {
+        return "testApiPage";
+    }
+
 }

@@ -71,6 +71,29 @@ public class JpaConfig{
     // If don`t want to store info about db on server
     //
 
+//
+//    @Value("db.name")
+//    private String dbName;
+//    @Value("db.auth")
+//    private String dbAuth;
+//    @Value("db.type")
+//    private String dbType;
+//    @Value("db.username")
+//    private String dbUsername;
+//    @Value("db.password")
+//    private String dbPassword;
+//    @Value("db.driverClassName")
+//    private String dbDriverClassName;
+//    @Value("db.url")
+//    private String dbUrl;
+//    @Value("db.validationQuery")
+//    private String dbValidationQuery;
+//    @Value("db.maxActive")
+//    private String dbMaxActive;
+//    @Value("db.maxIdle")
+//    private String dbMaxIdle;
+//
+//
 //    @Bean
 //    public PlatformTransactionManager transactionManager(
 //            EntityManagerFactory entityManagerFactory ){

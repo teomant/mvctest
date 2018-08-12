@@ -1,5 +1,6 @@
 package org.teomant.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "player")
 @Entity
 @Table(name = "Games", schema = "public", catalog = "opencodetest")
 public class GameEntity {
@@ -21,7 +22,7 @@ public class GameEntity {
     @Column(name = "id", updatable = false, insertable = false)
     private Long id;
 
-
+    @JsonIgnore
     @ManyToOne( optional = false )
     @JoinColumn( name = "player" )
     private UserEntity player;
@@ -34,7 +35,7 @@ public class GameEntity {
     @Column( name = "finished" )
     private boolean finished;
 
-    @OneToMany( fetch = FetchType.LAZY,
+    @OneToMany( fetch = FetchType.EAGER,
             mappedBy = "game",
             cascade = CascadeType.ALL ) private List<AttemptEntity> attempts;
 }
