@@ -1,0 +1,17 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tos="http://teomant.org/server"
+           targetNamespace="http://teomant.org/server" elementFormDefault="qualified">
+
+    <xs:element name="getDateTimeRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDateTimeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="date" type="xs:dateTime"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
