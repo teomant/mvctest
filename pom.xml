@@ -81,8 +81,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -98,10 +98,10 @@
                 </executions>
                 <configuration>
                     <schemaLanguage>WSDL</schemaLanguage>
-                    <generatePackage>hello.wsdl</generatePackage>
+                    <generatePackage>org.teomant.server</generatePackage>
                     <schemas>
                         <schema>
-                            <url>http://localhost:8080/ws/ws/countries.wsdl</url>
+                            <url>http://localhost:8080/server/dateTime.wsdl</url>
                         </schema>
                     </schemas>
                 </configuration>
